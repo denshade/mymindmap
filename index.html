@@ -14,13 +14,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://unpkg.com/jsmind@0.8.3/es6/jsmind.draggable-node.js"></script>
     <script type="text/javascript">
-        var options = {                     // for more detail at next chapter
-            container:'jsmind_container',   // [required] id of container
-            editable:true,                  // [required] whether allow edit or not
-            theme:'orange'                  // [required] theme
+        var mind = {
+    "meta":{
+        "name":"jsMind remote",
+        "author":"hizzgdev@163.com",
+        "version":"0.2"
+    },
+    "format":"node_tree",
+    "data":{"id":"root","topic":"jsMind","children":[
+        {"id":"easy","topic":"Easy","direction":"left","children":[
+            {"id":"easy1","topic":"Easy to show"},
+            {"id":"easy2","topic":"Easy to edit"},
+            {"id":"easy3","topic":"Easy to store"},
+            {"id":"easy4","topic":"Easy to embed"}
+        ]},
+        {"id":"open","topic":"Open Source","direction":"right","children":[
+            {"id":"open1","topic":"on GitHub"},
+            {"id":"open2","topic":"BSD License"}
+        ]},
+        {"id":"powerful","topic":"Powerful","direction":"right","children":[
+            {"id":"powerful1","topic":"Base on Javascript"},
+            {"id":"powerful2","topic":"Base on HTML5"},
+            {"id":"powerful3","topic":"Depends on you"}
+        ]},
+        {"id":"other","topic":"test node","direction":"left","children":[
+            {"id":"other1","topic":"I'm from local variable"},
+            {"id":"other2","topic":"I can do everything"}
+        ]}
+    ]}
+};
+        var options = {
+            container:'jsmind_container',
+            editable:true,
+            theme:'orange'
         };
         var jm = new jsMind(options);
-        jm.show();
+        // show it
+        jm.show(mind);
     </script>
   </body>
 </html>
